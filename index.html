@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dani Nails - Manicure Profissional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: white;
+            color: #c44569;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Seções */
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .sobre {
+            background: #fff;
+            text-align: center;
+        }
+
+        .sobre h2 {
+            font-size: 2.5em;
+            color: #c44569;
+            margin-bottom: 20px;
+        }
+
+        .sobre p {
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #666;
+        }
+
+        /* Serviços */
+        .servicos {
+            background: #fef5f8;
+        }
+
+        .servicos h2 {
+            font-size: 2.5em;
+            color: #c44569;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .servico-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .servico-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .servico-card h3 {
+            color: #c44569;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .servico-card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .preco {
+            font-size: 1.8em;
+            color: #ff6b9d;
+            font-weight: bold;
+        }
+
+        /* Galeria */
+        .galeria {
+            background: white;
+        }
+
+        .galeria h2 {
+            font-size: 2.5em;
+            color: #c44569;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .galeria-item {
+            height: 250px;
+            background: #fef5f8;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #c44569;
+            font-size: 1.2em;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Depoimentos */
+        .depoimentos {
+            background: #fef5f8;
+        }
+
+        .depoimentos h2 {
+            font-size: 2.5em;
+            color: #c44569;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .depoimento-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .depoimento-card p {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .depoimento-card h4 {
+            color: #c44569;
+            text-align: right;
+        }
+
+        /* Contato */
+        .contato {
+            background: white;
+            text-align: center;
+        }
+
+        .contato h2 {
+            font-size: 2.5em;
+            color: #c44569;
+            margin-bottom: 30px;
+        }
+
+        .contato-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .contato-item {
+            font-size: 1.1em;
+            color: #666;
+        }
+
+        .contato-item strong {
+            color: #c44569;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            .servicos h2, .galeria h2, .depoimentos h2, .contato h2, .sobre h2 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>💅 Dani Nails</h1>
+        <p>Beleza e cuidado nas suas mãos</p>
+        <img src="img/Screenshot - 2026-02-01T034224.274.png" alt="Foto da Dani Nails" width="300" height="200" border="5" style="border-color: #c44569;">
+        <h2><a href="#contato" class="btn">Agende seu horário</a></h2>
+    </header>
+
+    <!-- Sobre -->
+    <section class="sobre">
+        <h2>Sobre Mim</h2>
+        <p>
+            Olá! Sou a Daniela, manicure profissional apaixonada pelo que faço. 
+            Com anos de experiência e dedicação, ofereço serviços de qualidade 
+            com produtos de alta qualidade, sempre priorizando a saúde e beleza das suas unhas. 
+            Aqui você encontra um ambiente acolhedor e um atendimento personalizado!
+        </p>
+    </section>
+
+    <!-- Serviços -->
+    <section class="servicos">
+        <h2>Serviços</h2>
+        <div class="servicos-grid">
+            <div class="servico-card">
+                <h3>💅 Manicure</h3>
+                <p>Cuidado completo com as unhas das mãos e cutículas</p>
+                <div class="preco">R$ 25,00</div>
+            </div>
+            <div class="servico-card">
+                <h3>🦶 Pedicure</h3>
+                <p>Tratamento completo para os pés</p>
+                <div class="preco">R$ 25,00</div>
+            </div>
+            <div class="servico-card">
+                <h3>✨ Unhas Decoradas</h3>
+                <p>Nail art personalizada com designs exclusivos</p>
+                <div class="preco">A partir de R$ 25,00</div>
+            </div>
+          
+            <div class="servico-card">
+                <h3>🌟 Natura</h3>
+                <p>Produtos da marca Natura para unhas e cuidados</p>
+                <div class="preco">Consultar valores</div>
+                <a href="https://www.minhaloja.natura.com/consultoria/danielaaparecidadeoliveira1996" target="_blank" class="btn" style="margin-top: 15px; padding: 10px 20px; font-size: 0.9em;">Acesse minha loja virtual</a>
+            </div>
+        
+        </div>
+    </section>
+
+    <!-- Galeria -->
+    <section class="galeria">
+        <h2>Galeria de Trabalhos</h2>
+        <div class="galeria-grid">
+            <img src="img/Screenshot - 2026-02-01T021502.902.png" alt="Unha decorada com glitter" width="300" height="200" border="5" style="border-color: #c44569;">
+            <img src="img/IMG_20220501_105022_405.jpg" alt="Unha decorada com flores" width="300" height="200" border="5" style="border-color: #c44569;">
+            <img src="img/IMG_20220510_172059_226~3.jpg" alt="Unha decorada com pedras" width="300" height="200" border="5" style="border-color: #c44569;">
+            <img src="img/IMG_20220514_131830_571~5.jpg" alt="Unha decorada com desenhos" width="300" height="200" border="5" style="border-color: #c44569;">
+            <img src="img/IMG_20220522_221028_286~2.jpg" alt="Unha decorada com tons pastéis" width="300" height="200" border="5" style="border-color: #c44569;">
+            <img src="img/Screenshot - 2026-01-28T153556.580.png" alt="Unha decorada com cores vibrantes" width="300" height="200" border="5" style="border-color: #c44569;">
+            <img src="img/original_5eb750b8-be3a-485d-a3f3-e4d52fe4c556_IMG_20220501_213804_160.jpg" alt="Unha decorada com tema de verão" width="300" height="200" border="5" style="border-color: #c44569;">
+            <img src="img/Screenshot - 2026-02-01T033422.350.png" alt="Unha decorada com tema floral" width="300" height="200" border="5" style="border-color: #c44569;">
+        </div>
+    </section>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="depoimentos">
+        <h2>O que dizem minhas clientes</h2>
+        <div class="depoimento-card">
+            <p>"Atendimento impecável! A Dani é super atenciosa e caprichosa. Minhas unhas ficam perfeitas sempre!"</p>
+            <h4>- Maria Silva</h4>
+        </div>
+        <div class="depoimento-card">
+            <p>"Melhor manicure da região! Ambiente limpo, produtos de qualidade e um trabalho maravilhoso."</p>
+            <h4>- Ana Paula</h4>
+        </div>
+        <div class="depoimento-card">
+            <p>"Já sou cliente há 2 anos e não troco por nada! Profissionalismo e carinho em cada atendimento."</p>
+            <h4>- Juliana Costa</h4>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="contato" id="contato">
+        <h2>Agende seu Horário</h2>
+        <div class="contato-info">
+            <div class="contato-item">
+                <strong>📱 WhatsApp</strong>
+                (31) 99571-6459
+                <a href="https://api.whatsapp.com/send/?phone=5531995716459&text&type=phone_number&app_absent=0" target="_blank"class="btn" style="margin-top: 15px; padding: 10px 20px; font-size: 0.9em;">Falar comigo!</a>
+            </div>
+            <div class="contato-item">
+                <strong>📍 Endereço</strong>
+
+                Av. Santa Rita, 282-Segundo Andar, Centro, Viçosa-MG
+                <a href="https://maps.app.goo.gl/BZk2VdCoLqC7eojJ9" target="_blank"class="btn" style="margin-top: 15px; padding: 10px 20px; font-size: 0.9em;">Veja no mapa</a>
+
+            </div>
+            <div class="contato-item">
+                <strong>🕐 Horário</strong>
+                Seg a Sáb: 8h às 18h
+            </div>
+        
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Dani Nails - Todos os direitos reservados</p>
+        <p>Feito com 💖 para você, Alisson Zenith</p>
+    </footer>
+</body>
+</html>
